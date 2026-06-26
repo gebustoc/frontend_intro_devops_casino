@@ -80,4 +80,4 @@ jobs:
           kubectl rollout status deployment/casino-frontend --timeout=180s
           kubectl get pods -o wide
           echo "URL publica del LoadBalancer (tarda 2-3 min en responder):"
-          kubectl get svc orders-service-lb -o jsonpath='{.status.loadBalancer.ingress[0].hostname}'; echo
+          kubectl get svc casino-frontend -o jsonpath='{.status.loadBalancer.ingress[0].hostname}'; echo
