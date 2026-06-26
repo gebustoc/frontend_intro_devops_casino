@@ -27,4 +27,10 @@ spec:
               value: "http://casino-back"
             - name: APUESTAS_HOST
               value: "http://apuestas-service"
-
+          resources:
+            requests:
+              cpu: "128m"
+              memory: "64Mi"
+            limits:
+              memory: "256Mi"
+              cpu: "500m"
