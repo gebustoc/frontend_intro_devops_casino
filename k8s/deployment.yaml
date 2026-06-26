@@ -20,11 +20,11 @@ spec:
           image: <ACCOUNT_ID>.dkr.ecr.<REGION>.amazonaws.com/casino-frontend:latest
           env:
             - name: ESTADISTICAS_HOST
-              value: "http://estadisticas-service:8002"
+              value: "http://estadisticas-service"
             - name: BONOS_HOST
-              value: "http://bonos-service:8001"
+              value: "http://bonos-service"
             - name: BACKEND_HOST
-              value: "http://casino-back:8000"
+              value: "http://casino-back"
             - name: APUESTAS_HOST
-              value: "http://apuestas-service:8003"
+              value: "http://apuestas-service"
 
