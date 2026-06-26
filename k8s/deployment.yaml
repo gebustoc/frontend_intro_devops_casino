@@ -20,13 +20,13 @@ spec:
           image: <ACCOUNT_ID>.dkr.ecr.<REGION>.amazonaws.com/casino-frontend:latest
           env:
             - name: ESTADISTICAS_HOST
-              value: "http://estadisticas-service"
+              value: "estadisticas-service"
             - name: BONOS_HOST
-              value: "http://bonos-service"
+              value: "bonos-service"
             - name: BACKEND_HOST
-              value: "http://casino-back"
+              value: "casino-back"
             - name: APUESTAS_HOST
-              value: "http://apuestas-service"
+              value: "apuestas-service"
           resources:
             requests:
               cpu: "128m"
