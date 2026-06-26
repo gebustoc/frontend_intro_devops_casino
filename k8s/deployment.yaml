@@ -14,17 +14,17 @@ spec:
       labels:
         app: casino-frontend
     spec:
-      env:
-        - name: ESTADISTICAS_HOST
-          value: "http://estadisticas-service:8002"
-        - name: BONOS_HOST
-          value: "http://bonos-service:8001"
-        - name: BACKEND_HOST
-          value: "http://casino-back:8000"
-        - name: APUESTAS_HOST
-          value: "http://apuestas-service:8003"
-
 
       containers:
         - name: casino-frontend
           image: <ACCOUNT_ID>.dkr.ecr.<REGION>.amazonaws.com/casino-frontend:latest
+          env:
+            - name: ESTADISTICAS_HOST
+              value: "http://estadisticas-service:8002"
+            - name: BONOS_HOST
+              value: "http://bonos-service:8001"
+            - name: BACKEND_HOST
+              value: "http://casino-back:8000"
+            - name: APUESTAS_HOST
+              value: "http://apuestas-service:8003"
+
