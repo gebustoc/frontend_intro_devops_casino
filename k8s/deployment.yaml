@@ -24,7 +24,7 @@ spec:
             - name: BONOS_HOST
               value: "bonos-service"
             - name: BACKEND_HOST
-              value: "casino-back"
+              value: "casino-backend"
             - name: APUESTAS_HOST
               value: "apuestas-service"
           resources:
