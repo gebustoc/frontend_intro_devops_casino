@@ -14,6 +14,12 @@ spec:
       labels:
         app: casino-frontend
     spec:
+      env:
+        - name: PRODUCTS_SERVICE_URL
+          value: "http://products-service:8001"
+        - name: INVENTORY_SERVICE_URL
+          value: "http://inventory-service:8002"
+
       containers:
         - name: casino-frontend
           image: <ACCOUNT_ID>.dkr.ecr.<REGION>.amazonaws.com/casino-frontend:latest

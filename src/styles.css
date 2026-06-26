@@ -85,62 +85,43 @@ input:focus, select:focus {
   color: #fff;
   box-shadow: 0 4px 16px rgba(16,185,129,0.25);
 }
-.btn-primario:hover:not(:disabled) { filter: brightness(1.1); box-shadow: 0 6px 22px rgba(16,185,129,0.35); }
+.btn-primario:hover:not(:disabled) { filter: brightness(1.1); }
 .btn-gold {
   background: linear-gradient(135deg, #b8902a, #d4af37);
-  color: #1a1207;
-  font-weight: 800;
-  box-shadow: 0 4px 16px rgba(212,175,55,0.22);
+  color: #050d1a;
+  font-weight: 700;
 }
-.btn-gold:hover:not(:disabled) { filter: brightness(1.08); }
 .btn-secundario {
   background: rgba(255,255,255,0.05);
   color: var(--text);
-  border: 1px solid rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.1);
 }
-.btn-secundario:hover:not(:disabled) { border-color: var(--border-gold); }
 .btn-rojo  { background: linear-gradient(135deg, #7f1d1d, #b91c1c); color: #fff; }
 .btn-verde { background: linear-gradient(135deg, #14532d, #16a34a); color: #fff; }
-.btn:active:not(:disabled) { transform: scale(0.97); }
+.btn:active:not(:disabled) { transform: translateY(1px); }
 
 .tarjeta {
-  position: relative;
-  background:
-    linear-gradient(165deg, rgba(20,40,32,0.5), rgba(8,16,12,0.55)), var(--bg-card);
+  background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: var(--radius);
+  border-radius: 14px;
   padding: 24px;
-  box-shadow: var(--shadow-card);
-  backdrop-filter: blur(6px);
-  overflow: hidden;
-}
-/* Filo dorado superior sutil en cada tarjeta. */
-.tarjeta::before {
-  content: ''; position: absolute; inset: 0 0 auto 0; height: 2px;
-  background: linear-gradient(90deg, transparent, rgba(212,175,55,0.55), transparent);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+  backdrop-filter: blur(4px);
 }
 
 .titulo-juego {
-  font-family: var(--font-display);
+  font-family: 'Georgia', serif;
   color: var(--gold);
-  letter-spacing: 1px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
   margin: 0 0 20px;
-  font-size: 26px;
-  font-weight: 800;
-  display: flex; align-items: center; gap: 8px;
+  font-size: 20px;
+  font-weight: 400;
 }
 
 .error { color: #fca5a5; margin-top: 8px; font-size: 13px; }
-.exito, .ok { color: #86efac; margin-top: 8px; font-size: 13px; }
+.exito { color: #86efac; margin-top: 8px; font-size: 13px; }
 
 table { width: 100%; border-collapse: collapse; }
-th, td { padding: 11px 12px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.06); }
-th { color: var(--gold); font-weight: 700; text-transform: uppercase; font-size: 11px; letter-spacing: 1.5px; }
-tbody tr { transition: background .15s; }
-tbody tr:hover { background: rgba(16,185,129,0.05); }
-
-/* Respeta la preferencia de menos movimiento en toda la plataforma. */
-@media (prefers-reduced-motion: reduce) {
-  * { animation-duration: .001ms !important; animation-iteration-count: 1 !important;
-      transition-duration: .001ms !important; scroll-behavior: auto !important; }
-}
+th, td { padding: 10px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.06); }
+th { color: var(--gold); font-weight: 600; text-transform: uppercase; font-size: 11px; letter-spacing: 2px; }

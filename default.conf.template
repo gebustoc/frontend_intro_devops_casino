@@ -17,10 +17,6 @@ server {
         proxy_set_header   X-Forwarded-Proto $scheme;
     }
 
-    # Health del backend a traves del proxy
-    location /health {
-        proxy_pass http://${BACKEND_HOST}:3000/health;
-    }
 
     # Single Page App: cualquier ruta no encontrada → index.html
     # (necesario para que /lobby, /slots, /blackjack funcionen al
