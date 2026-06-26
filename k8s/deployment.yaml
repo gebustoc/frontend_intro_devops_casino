@@ -5,7 +5,7 @@ metadata:
   labels:
     app: casino-frontend
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: casino-frontend
@@ -17,26 +17,3 @@ spec:
       containers:
         - name: casino-frontend
           image: <ACCOUNT_ID>.dkr.ecr.<REGION>.amazonaws.com/casino-frontend:latest
-          ports:
-            - containerPort: 3002
-          # Probe de "vivo": si falla, Kubernetes reinicia el contenedor.
-          livenessProbe:
-            httpGet:
-              path: /livez
-              port: 3002
-            initialDelaySeconds: 5
-            periodSeconds: 10
-          # Probe de "listo": si falla, no recibe tráfico desde el Service.
-#          readinessProbe:
- #           httpGet:
-  #            path: /readyz
-   #           port: 3002
-    #        initialDelaySeconds: 3
-     #       periodSeconds: 5
-      #    resources:
-       #     requests:
-        #      cpu: "50m"
-         #     memory: "64Mi"
-          #  limits:
-           #   cpu: "250m"
-            #  memory: "128Mi"
