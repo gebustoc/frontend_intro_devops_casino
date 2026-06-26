@@ -9,7 +9,7 @@ server {
     # ${BACKEND_HOST} es una variable de entorno que pasamos al
     # 'docker run' en el deploy (-e BACKEND_HOST=...).
     location /api/estadisticas {
-        proxy_pass         http://${ESTADISTICAS_HOST}:3002/api/estadisticas;
+        proxy_pass         http://${ESTADISTICAS_HOST}:8002/api/estadisticas;
         proxy_http_version 1.1;
         proxy_set_header   Host              $host;
         proxy_set_header   X-Real-IP         $remote_addr;
@@ -18,7 +18,7 @@ server {
     }
 
     location /api/bonos {
-        proxy_pass         http://${BONOS_HOST}:3001/api/bonos;
+        proxy_pass         http://${BONOS_HOST}:8001/api/bonos;
         proxy_http_version 1.1;
         proxy_set_header   Host              $host;
         proxy_set_header   X-Real-IP         $remote_addr;
@@ -26,7 +26,7 @@ server {
         proxy_set_header   X-Forwarded-Proto $scheme;
     }
     location /api/apuestas {
-        proxy_pass         http://${APUESTAS_HOST}:3003/api/apuestas;
+        proxy_pass         http://${APUESTAS_HOST}:8003/api/apuestas;
         proxy_http_version 1.1;
         proxy_set_header   Host              $host;
         proxy_set_header   X-Real-IP         $remote_addr;
@@ -35,7 +35,7 @@ server {
     }
 
     location /api/ {
-        proxy_pass         http://${BACKEND_HOST}:3000/api;
+        proxy_pass         http://${BACKEND_HOST}:8000/api;
         proxy_http_version 1.1;
         proxy_set_header   Host              $host;
         proxy_set_header   X-Real-IP         $remote_addr;
