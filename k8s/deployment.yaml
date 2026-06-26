@@ -15,10 +15,15 @@ spec:
         app: casino-frontend
     spec:
       env:
-        - name: PRODUCTS_SERVICE_URL
-          value: "http://products-service:8001"
-        - name: INVENTORY_SERVICE_URL
-          value: "http://inventory-service:8002"
+        - name: ESTADISTICAS_HOST
+          value: "http://estadisticas-service:8002"
+        - name: BONOS_HOST
+          value: "http://bonos-service:8001"
+        - name: BACKEND_HOST
+          value: "http://casino-back:8000"
+        - name: APUESTAS_HOST
+          value: "http://apuestas-service:8003"
+
 
       containers:
         - name: casino-frontend
