@@ -14,4 +14,4 @@ spec:
     - name: http
       protocol: TCP
       port: 80        # puerto del Service (DNS interno)
-      targetPort: 80  # puerto del contenedor
+      targetPort: 8080  # puerto del contenedor
