@@ -22,7 +22,7 @@ import { Juego } from '../../models/casino.models';
         <span class="saldo-label">Saldo</span>
         <span class="saldo-valor">$ {{ auth.usuario()?.saldo | number:'1.0-0' }}</span>
       </div>
-      <p class="sub">IMPOSSIBLE, THE INDEX DIDN'T MODIFY ANYTHING</p>
+      <p class="sub">Elige un juego para empezar.</p>
     </section>
 
     <div class="divisor">Juegos disponibles</div>
