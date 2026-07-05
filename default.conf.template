@@ -15,6 +15,7 @@ server {
         proxy_set_header   X-Real-IP         $remote_addr;
         proxy_set_header   X-Forwarded-For   $proxy_add_x_forwarded_for;
         proxy_set_header   X-Forwarded-Proto $scheme;
+        proxy_set_header   Authoirzation     $http_authorization
     }
 
     location /api/bonos {
@@ -24,6 +25,8 @@ server {
         proxy_set_header   X-Real-IP         $remote_addr;
         proxy_set_header   X-Forwarded-For   $proxy_add_x_forwarded_for;
         proxy_set_header   X-Forwarded-Proto $scheme;
+        proxy_set_header   Authoirzation     $http_authorization
+
     }
     location /api/apuestas {
         proxy_pass         http://${APUESTAS_HOST}:3003;
@@ -32,6 +35,8 @@ server {
         proxy_set_header   X-Real-IP         $remote_addr;
         proxy_set_header   X-Forwarded-For   $proxy_add_x_forwarded_for;
         proxy_set_header   X-Forwarded-Proto $scheme;
+        proxy_set_header   Authoirzation     $http_authorization
+
     }
 
     location /api/ {
@@ -41,6 +46,7 @@ server {
         proxy_set_header   X-Real-IP         $remote_addr;
         proxy_set_header   X-Forwarded-For   $proxy_add_x_forwarded_for;
         proxy_set_header   X-Forwarded-Proto $scheme;
+        proxy_set_header   Authoirzation     $http_authorization
     }
 
 
