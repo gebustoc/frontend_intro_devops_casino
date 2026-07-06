@@ -17,4 +17,4 @@ FROM nginxinc/nginx-unprivileged:stable-alpine AS runtime
 COPY default.conf.template /etc/nginx/templates/default.conf.template
 COPY --from=builder /app/dist/casino-frontend/browser/. /usr/share/nginx/html/
 USER nginx
-EXPOSE 80
+EXPOSE 8000

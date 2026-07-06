@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: casino-frontend
+  labels:
+    app: casino-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: casino-frontend
+  template:
+    metadata:
+      labels:
+        app: casino-frontend
+    spec:
+
+      containers:
+        - name: casino-frontend
+          image: <ACCOUNT_ID>.dkr.ecr.<REGION>.amazonaws.com/casino-frontend:latest
+          env:
+            - name: ESTADISTICAS_HOST
+              value: "estadisticas-service"
+            - name: BONOS_HOST
+              value: "bonos-service"
+            - name: BACKEND_HOST
+              value: "casino-backend"
+            - name: APUESTAS_HOST
+              value: "apuestas-service"
+          resources:
+            requests:
+              cpu: "128m"
+              memory: "64Mi"
+            limits:
+              memory: "256Mi"
+              cpu: "500m"
