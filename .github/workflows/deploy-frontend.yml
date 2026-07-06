@@ -12,8 +12,22 @@ env:
   CLUSTER_NAME: microservicios-casino
 
 jobs:
+  runTest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: browser-actions/setup-chrome@v2
+      
+      - name: Instala librerias
+        run: npm ci
+      - name: Corre Pruebas
+        run: npm test -- --watch=false --browsers=ChromeHeadless
+      
+
+
   buildPush:
     runs-on: ubuntu-latest
+    needs: runTest
     steps:
       - uses: actions/checkout@v4
 
