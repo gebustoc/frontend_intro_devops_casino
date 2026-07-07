@@ -1,6 +1,6 @@
 import http from "k6/http";
 
-// 50 usuarios virtuales golpeando el servicio durante 5 minutos.
+// 100 usuarios virtuales golpeando el servicio durante 5 minutos.
 export const options = {
   vus: 100,
   duration: "5m",
